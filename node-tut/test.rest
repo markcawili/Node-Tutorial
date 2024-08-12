@@ -1,0 +1,31 @@
+###
+GET http://localhost:8383/friends/mark?api_key=banana
+
+###
+POST http://localhost:8383/friends
+//Specifying that we are sending json as the package of the request
+Content-Type: application/json
+
+//Give it something to send
+{
+  "friend": "mark",
+  "adjective": "cool"
+}
+
+###
+//This will update aka "patch" the json of mark with newAdjective
+PATCH http://localhost:8383/friends
+Content-Type: application/json
+
+{
+  "friend": "mark",
+  "newAdjective": "lame"
+}
+
+###
+DELETE http://localhost:8383/friends
+Content-Type: application/json
+
+{
+  "friend": "mark"
+}
